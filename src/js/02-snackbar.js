@@ -10,8 +10,8 @@ function popMessage(event) {
   const state = form.elements.state.value;
 
   createPromise({ delay, state })
-    .then(onFulfilled)
-    .catch(onRejected);
+    .then(fulfilled)
+    .catch(rejected);
 }
 
 function createPromise({ delay, state }) {
