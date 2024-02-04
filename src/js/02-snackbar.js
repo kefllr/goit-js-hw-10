@@ -10,8 +10,8 @@ function popMessage(event) {
   const state = form.elements.state.value;
 
   createPromise({ delay, state })
-    .then(fulfilled)
-    .catch(rejected);
+    .then(onFulfilled)
+    .catch(onRejected);
 }
 
 function createPromise({ delay, state }) {
@@ -42,10 +42,10 @@ function showToast(title, backgroundColor, message, delay) {
   });
 }
 
-function fulfilled(delay) {
+function onFulfilled(delay) {
   showToast('OK', '#59a10d', 'Fulfilled promise', delay);
 }
 
-function rejected(delay) {
+function onRejected(delay) {
   showToast('Error', '#ef4040', 'Rejected promise', delay);
 }
