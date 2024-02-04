@@ -2,9 +2,9 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 const form = document.querySelector('.form');
-form.addEventListener('submit', popUpMessage);
+form.addEventListener('submit', popMessage);
 
-function popUpMessage(event) {
+function popMessage(event) {
   event.preventDefault();
   const delay = form.elements.delay.value;
   const state = form.elements.state.value;
@@ -42,10 +42,10 @@ function showToast(title, backgroundColor, message, delay) {
   });
 }
 
-function onFulfilled(delay) {
+function fulfilled(delay) {
   showToast('OK', '#59a10d', 'Fulfilled promise', delay);
 }
 
-function onRejected(delay) {
+function rejected(delay) {
   showToast('Error', '#ef4040', 'Rejected promise', delay);
 }
